@@ -2,6 +2,7 @@ package com.santidev.pong;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private static final String TAG = "ManinActivity";
 
     //Creamos una variable de tipo game view que se encarge de gestionanr la logica
@@ -36,10 +37,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        //informamos al videojuego que reaunude la partida
+        gameView.resume();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        //informamos al videojuego que pause la partida
     }
 }
